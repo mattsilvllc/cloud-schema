@@ -22,7 +22,10 @@ app.use(express.methodOverride());
 app.use(express.cookieParser('your secret here'));
 app.use(express.session());
 app.use(app.router);
-app.use(require('less-middleware')({ src: __dirname + '/public/bower_components/bootstrap/less' }));
+app.use(require('less-middleware')({ 
+  src: __dirname + '/public/bower_components/bootstrap/less',
+   
+}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
