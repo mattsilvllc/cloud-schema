@@ -1,4 +1,5 @@
 
+
 /**
  * Module dependencies.
  */
@@ -24,7 +25,15 @@ app.use(express.session());
 app.use(app.router);
 app.use(require('less-middleware')({ 
   src: __dirname + '/public/bower_components/bootstrap/less',
-   
+  force:true,
+  once:false,
+  debug:true,
+  dest:__dirname+"/public/css",
+  // prefix:"css",
+  root:path.join(__dirname, 'public'),
+  compress:true,
+  yuicompress:true,
+  realativeUrls:true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
